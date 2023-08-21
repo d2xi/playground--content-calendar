@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+ul {
+  background-color:white;
+}
+
+li {
+  color: royalblue;
+  font-size: 20px;
+}
+
+button {
+  background-color: transparent;
+  font-size: 25px;
+  color: darkred;
+  border: none;
+}
