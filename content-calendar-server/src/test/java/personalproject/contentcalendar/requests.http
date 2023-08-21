@@ -55,8 +55,8 @@ Content-Type: application/json
     "status": "IN_PROGRESS",
     "desc": "The dog I saw today.",
     "contentType": "ARTICLE",
-    "dateCreated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:ms' +10 d}}",
-    "dateUpdated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:ms' +20 d}}",
+    "dateCreated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:26.7522291' +10 d}}",
+    "dateUpdated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:26.7522291' +20 d}}",
     "url": "" 
   }
 
@@ -73,7 +73,37 @@ Content-Type: application/json
   "status": "IDEA",
   "desc": "Video about cows",
   "contentType": "VIDEO",
-    "dateCreated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:26.7522291' -7 d}}",
-    "dateUpdated": null,
+  "dateCreated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:26.7522291' -7 d}}",
+  "dateUpdated": null,
   "url": ""
+}
+
+### Invalid conteant (enums)
+POST http://localhost:8080/api/content HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "{{$randomInt 10 20}}",
+  "title": "zzZZZzz",
+  "status": "DREAM",
+  "desc": "Course about dreams",
+  "contentType": "COURSE",
+  "dateCreated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:26.7522291' +10 d}}",
+  "dateUpdated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:26.7522291' +20 d}}",
+  "url": "" 
+}
+
+### Invalid conteant (enums)
+POST http://localhost:8080/api/content HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "{{$randomInt 10 20}}",
+  "title": "Cows",
+  "status": "IDEA",
+  "desc": "Video about cows",
+  "contentType": "BOOK",
+  "dateCreated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:26.7522291' +10 d}}",
+  "dateUpdated": "{{$localDatetime 'YYYY-MM-DDTHH:mm:ss:26.7522291' +20 d}}",
+  "url": "" 
 }
